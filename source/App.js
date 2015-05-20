@@ -1,7 +1,16 @@
+var Debug = require('debug');
+
+global.debug = Debug('reactTest:base');
+Debug.enable('reactTest:*');
+
 var React = require('react');
-var SimpleTest = require('./components/SimpleTest.react');
+var FriendsContainer = require('./components/FriendsContainer.react');
+
+debug("Rendering start");
 
 React.render(
-  <SimpleTest />,
+  <FriendsContainer />,
   document.getElementById('mainSpot')
 );
+
+debug("Rendering complete");
